@@ -1,0 +1,35 @@
+### 1. Create a new task (POST)
+POST http://localhost:5000/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Learn CRUD",
+  "description": "Finish Subtask 3",
+  "status": "in-progress",
+  "dueDate": "2025-08-15"
+}
+
+###
+
+### 2. Get all tasks (GET)
+GET http://localhost:5000/api/tasks
+
+###
+
+### 3. Update a task by ID (PUT)
+# ⚠️ Replace the ID below with a real task ID from the GET request
+PUT http://localhost:5000/api/tasks/688b6e12ab9b4d6f7273067a
+Content-Type: application/json
+
+{
+  "title": "Updated Task Title",
+  "description": "Updated Description",
+  "status": "completed",
+  "dueDate": "2025-08-20"
+}
+
+###
+
+### 4. Delete a task by ID (DELETE)
+# ⚠️ Replace the ID below with a real task ID from the GET request
+DELETE http://localhost:5000/api/tasks/688b6e12ab9b4d6f7273067a

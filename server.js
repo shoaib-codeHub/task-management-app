@@ -1,5 +1,3 @@
-// server.js
-
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -23,9 +21,9 @@ app.get('/', (req, res) => {
   res.send('🚀 Server is running!');
 });
 
-// Load Routes
+// Load Task Routes
 const taskRoutes = require('./my-backend/routes/taskRoutes');
-app.use('/api/tasks', taskRoutes);  // Use controller-based routes
+app.use('/api/tasks', taskRoutes); // Controller-based routing
 
 // Start the Server
 const PORT = process.env.PORT || 5000;

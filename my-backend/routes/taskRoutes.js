@@ -1,20 +1,12 @@
-// my-backend/routes/taskRoutes.js
-
+// routes/taskRoutes.js
 const express = require('express');
 const router = express.Router();
-const {
-  createTask,
-  getTasks,
-  getTaskById,
-  updateTask,
-  deleteTask
-} = require('../controllers/taskController');
+const taskController = require('../controllers/taskController');
 
-// Routes connected to controller logic
-router.post('/', createTask);
-router.get('/', getTasks);
-router.get('/:id', getTaskById);
-router.put('/:id', updateTask);
-router.delete('/:id', deleteTask);
+router.post('/', taskController.createTask);         // Create
+router.get('/', taskController.getTasks);            // Read all
+router.get('/:id', taskController.getTaskById);      // Read one
+router.put('/:id', taskController.updateTask);       // Update
+router.delete('/:id', taskController.deleteTask);    // Delete
 
 module.exports = router;
