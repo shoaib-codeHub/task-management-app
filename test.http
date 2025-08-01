@@ -1,35 +1,71 @@
-### 1. Create a new task (POST)
-POST http://localhost:5000/api/tasks
+### 🔐 0. User Registration
+POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-  "title": "Learn CRUD",
-  "description": "Finish Subtask 3",
-  "status": "in-progress",
-  "dueDate": "2025-08-15"
+  "name": "Mansoor Alam",
+  "email": "mos399058@gmail.com",
+  "password": "mo132002"
 }
 
 ###
 
-### 2. Get all tasks (GET)
-GET http://localhost:5000/api/tasks
-
-###
-
-### 3. Update a task by ID (PUT)
-# ⚠️ Replace the ID below with a real task ID from the GET request
-PUT http://localhost:5000/api/tasks/688b6e12ab9b4d6f7273067a
+### 🔐 1. User Login
+POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "title": "Updated Task Title",
-  "description": "Updated Description",
+  "email": "mos399058@gmail.com",
+  "password": "mo132002"
+}
+
+###
+
+### 💾 2. Set JWT Token (Paste login response token here)
+# After logging in, copy your JWT token and replace {{token}} below.
+# Example: 
+# @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhjMzQ4MjhmYWRlZjdiNGVjYzcyMjIiLCJlbWFpbCI6Im1vczM5OTA1OEBnbWFpbC5jb20iLCJpYXQiOjE3NTQwMTg5ODAsImV4cCI6MTc1NDAyMjU4MH0.KbptenmUuQEWF-4m4E3uhIWQzq9-YTHJ4F8n3GMYY9A
+
+###
+
+### 📝 3. Create a Task
+POST http://localhost:5000/api/tasks
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "successfully add task",
+  "description": "task is adding successfully",
+  "status": "completed",
+  "dueDate": "2025-08-01"
+}
+
+###
+
+### 📄 4. Get All Tasks (Protected)
+GET http://localhost:5000/api/tasks
+Authorization: Bearer {{token}}
+
+###
+
+### ✏️ 5. Update Task by ID (Protected)
+# ⚠️ Replace PUT_TASK_ID_HERE with the real task ID from step 4
+PUT http://localhost:5000/api/tasks/688b6dccab9b4d6f72730677
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Learning complete CRUD",
+  "description": "Finish crud",
   "status": "completed",
   "dueDate": "2025-08-20"
 }
 
 ###
 
-### 4. Delete a task by ID (DELETE)
-# ⚠️ Replace the ID below with a real task ID from the GET request
-DELETE http://localhost:5000/api/tasks/688b6e12ab9b4d6f7273067a
+### 🗑️ 6. Delete Task by ID (Protected)
+# ⚠️ Replace PUT_TASK_ID_HERE with the real task ID from step 4
+DELETE http://localhost:5000/api/tasks/688b6dccab9b4d6f72730677
+Authorization: Bearer {{token}}
