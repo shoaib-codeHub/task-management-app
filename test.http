@@ -3,9 +3,9 @@ POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-  "name": "Mansoor Alam",
-  "email": "mos399058@gmail.com",
-  "password": "mo132002"
+  "name": "shoaib khan",
+  "email": "shoaib132002@gmail.com",
+  "password": "shoaib132002"
 }
 
 ###
@@ -15,8 +15,8 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "mos399058@gmail.com",
-  "password": "mo132002"
+  "email": "shoaib132002@gmail.com",
+  "password": "shoaib132002"
 }
 
 ###
@@ -26,7 +26,7 @@ Content-Type: application/json
 # Example: 
 # @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhjMzQ4MjhmYWRlZjdiNGVjYzcyMjIiLCJlbWFpbCI6Im1vczM5OTA1OEBnbWFpbC5jb20iLCJpYXQiOjE3NTQwMTg5ODAsImV4cCI6MTc1NDAyMjU4MH0.KbptenmUuQEWF-4m4E3uhIWQzq9-YTHJ4F8n3GMYY9A
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhjNTliYzllNWZjNmVlNjI0MTA3N2MiLCJlbWFpbCI6InNob2FpYjEzMjAwMkBnbWFpbC5jb20iLCJpYXQiOjE3NTQwMjg1MTEsImV4cCI6MTc1NDAzMjExMX0.eaGonGmA9O4_V4HWPb0I60MlEbAeYbS7RCR-BwKnUXw
 
 ###
 
@@ -36,9 +36,9 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "title": "successfully add task",
-  "description": "task is adding successfully",
-  "status": "completed",
+  "title": "recite Surah",
+  "description": "i will do today",
+  "status": "pending",
   "dueDate": "2025-08-01"
 }
 
@@ -52,13 +52,13 @@ Authorization: Bearer {{token}}
 
 ### ✏️ 5. Update Task by ID (Protected)
 # ⚠️ Replace PUT_TASK_ID_HERE with the real task ID from step 4
-PUT http://localhost:5000/api/tasks/688b6dccab9b4d6f72730677
+PUT http://localhost:5000/api/tasks/688c5a879e5fc6ee62410783
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "title": "Learning complete CRUD",
-  "description": "Finish crud",
+  "title": "Surah Al Kahaf",
+  "description": "Recite Successfully",
   "status": "completed",
   "dueDate": "2025-08-20"
 }
@@ -67,5 +67,5 @@ Authorization: Bearer {{token}}
 
 ### 🗑️ 6. Delete Task by ID (Protected)
 # ⚠️ Replace PUT_TASK_ID_HERE with the real task ID from step 4
-DELETE http://localhost:5000/api/tasks/688b6dccab9b4d6f72730677
+DELETE http://localhost:5000/api/tasks/688c5a879e5fc6ee62410783
 Authorization: Bearer {{token}}
