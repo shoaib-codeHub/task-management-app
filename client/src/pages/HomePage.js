@@ -1,13 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
-function HomePage() {
+function Home() {
   return (
-    <div>
-      <h2>Home Page</h2>
-      <Link to="/login">Go to Login</Link>
-    </div>
+    <>
+      <Navbar />
+      <div className="container mt-5">
+        <div className="text-center">
+          <h1 className="display-4">Welcome to Task Manager</h1>
+          <p className="lead">Manage your tasks efficiently and stay productive.</p>
+        </div>
+      </div>
+    </>
   );
 }
 
-export default HomePage;
+export default Home;
